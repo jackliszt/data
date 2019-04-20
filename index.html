@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -177,32 +177,12 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
           </a>
         </li>
       
@@ -223,26 +203,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
-            
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
-            
-            站点地图
           </a>
         </li>
       
@@ -279,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Pig入门学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/关于说明/说明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liszt">
@@ -298,7 +258,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/17/Pig入门学习/" itemprop="url">test123</a></h1>
+                <a class="post-title-link" href="/2019/04/21/关于说明/说明/" itemprop="url">说明</a></h1>
         
 
         <div class="post-meta">
@@ -310,8 +270,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T19:09:22+08:00">
-                2019-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T00:47:27+08:00">
+                2019-04-21
               </time>
             
 
@@ -350,189 +310,16 @@
       
         
           
-            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>Apache Pig是MapReduce的一个抽象，是一个工具/平台，用于分析较大的数据集，并将它们表示为数据流。</p>
-<p>可以使用Pig在Hadoop中执行所有的数据处理的操作</p>
-<p>下载地址：[ <a href="http://mirrors.shu.edu.cn/apache/pig/pig-0.17.0/" target="_blank" rel="noopener">http://mirrors.shu.edu.cn/apache/pig/pig-0.17.0/</a> ]</p>
-<ul>
-<li>先决条件：在运行在Apache Pig之前，必须在系统上安装h好Hadooph和Java</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> 创建pig存放目录</span><br><span class="line">mkdir /opt/pig</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 解压pig</span><br><span class="line">tar xvf tar xvf pig-0.17.0.tar.gz</span><br><span class="line">mv pig-0.17.0/*  /opt/pig</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加环境变量</span><br><span class="line">export PIG_HOME=/opt/pig</span><br><span class="line">export PIG_CLASSPATH=$PIG_HOME/conf</span><br><span class="line">export PATH=$PIG_HOME/bin:$PATH</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 查看是否配置成功</span><br><span class="line">pig -version</span><br></pre></td></tr></table></figure>
-<h2 id="Pig的执行模式和机制"><a href="#Pig的执行模式和机制" class="headerlink" title="Pig的执行模式和机制"></a>Pig的执行模式和机制</h2><h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><ul>
-<li>Local模式(pig -x local)<ul>
-<li>在此模式下，所有文件都从本地主机和本地文件系统加载，通常用于测试。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>MapReduce模式(pig -x mapreduce)<ul>
-<li>使用Pig加载或处理Hadoop文件系统中存在的数据的地方。在这种模式下， 每当执行Pig语句来处理数据时，会在后端调用一个MapReduce作业。</li>
-</ul>
-</li>
-</ul>
-<h3 id="执行机制"><a href="#执行机制" class="headerlink" title="执行机制"></a>执行机制</h3><p><strong>通过三种方式执行，即交互模式</strong></p>
-<ul>
-<li><p>交互模式（Grunt shell）</p>
-<ul>
-<li>在此shell中，可以输入Pig Latin语句并获取输出（使用Dump运算符）</li>
-</ul>
-</li>
-<li><p>批处理模式（脚本）</p>
-<ul>
-<li>可以将Pig Latin脚本写入具有.pig扩展名的单个文件中，以批处理模式运行</li>
-</ul>
-</li>
-<li><p>嵌入式模式（UDF）</p>
-<ul>
-<li>Pig允许在Java等编程语言中定义自己的函数，并在脚本中运行</li>
-</ul>
-</li>
-</ul>
-<h3 id="Pig-Grunt-Shell"><a href="#Pig-Grunt-Shell" class="headerlink" title="Pig Grunt Shell"></a>Pig Grunt Shell</h3><p>示例：<code>sh ls</code><br>调用Linux shell 的ls命令</p>
-<p>示例： <code>fs -ls</code><br>调用HDFS的ls命令</p>
-<p>示例： <code>exec /sample_script.pig</code><br>从Grunt shell执行Pig脚本</p>
-<p>示例： <code>run /sample_script.pig</code><br>从Grunt shell运行Pig脚本</p>
-<p><strong>exec和run命令之间的区别是，如果使用run，则脚本中的语句在historym命令中可用</strong></p>
-<h2 id="Pig-Latin"><a href="#Pig-Latin" class="headerlink" title="Pig Latin"></a>Pig Latin</h2><p>Pig Latin适用于使用Pig分析Hadoop中数据的语言</p>
-<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>Pig的数据模型是完全嵌套的。</p>
-<ul>
-<li>包是元组的集合</li>
-<li>元组是有序的字段集</li>
-<li>字段是一段数据</li>
-</ul>
-<h3 id="类型结构运算符"><a href="#类型结构运算符" class="headerlink" title="类型结构运算符"></a>类型结构运算符</h3><p>()    -&gt;    元组构造函数运算符，用于构建元组</p>
-<p>{}    -&gt;    包构造函数运算符，用于构造包    -&gt;    示例:{（Raju,30）,（Mohammad,45）}</p>
-<p>[]    -&gt;    映射构造函数运算符，用于构造一个映射    -&gt;    示例：[name＃Raja,age＃30]</p>
-<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h4><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加载和存储</td>
-</tr>
-<tr>
-<td>LOAD</td>
-<td>将数据从文件系统(local/HDFS)加载到关系中</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>STORE</td>
-<td>将数据从文件系统(local/HDFS)存储到关系中</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>过滤</td>
-</tr>
-<tr>
-<td>FILTER</td>
-<td>从关系中删除不需要的行</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>DISTINCT</td>
-<td>从关系中删除重复行</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>FOREACH, GENERATE</td>
-<td>基于数据列生成数据转换</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>STREAM</td>
-<td>使用外部程序转换关系</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>分组和连接</td>
-</tr>
-<tr>
-<td>JOIN</td>
-<td>连接两个或多个关系</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>COGROUP</td>
-<td>将数据分组为两个或多个关系</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>GROUP</td>
-<td>在单个关系中对数据进行分组</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>CROSS</td>
-<td>创建两个或多个关系的向量积</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>排序</td>
-</tr>
-<tr>
-<td>ORDER</td>
-<td>基于一个或多个字段（升序或降序）排列关系</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>LIMIT</td>
-<td>从关系中获取有限数量的元组</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-<tr>
-<td>诊断运算符</td>
-</tr>
-<tr>
-<td>DUMP</td>
-<td>在控制台打印关系的内容</td>
-</tr>
-</tbody>
-</table>
-<h3 id="LOAD-运算符"><a href="#LOAD-运算符" class="headerlink" title="LOAD 运算符"></a>LOAD 运算符</h3><p>语法： load语句由两部分组成，用“=”运算符分隔。</p>
-<p>左侧是想要存储数据的关系的名称</p>
-<p>右侧是需要定义如何存储数据</p>
-<p><code>Relation_name = LOAD &#39;Input file path&#39; USING function as schema;</code></p>
-<ul>
-<li>releation_name：必须要提到要存储的关系</li>
-<li>Input file path：必须提到存储文件的HDFS目录(MapReduce模式)</li>
-<li>function：必须从Pig提供的一组加载函数中选择一个函数(BigStorage, JsonLoader, PigStorage, TextLoader)</li>
-<li>schema：必须定义数据的模式</li>
-</ul>
-<p><strong>PigStorage() 函数，将数据加载并存储为结构化文本文件。它采用分隔符，使用元组的每个实体作为参数分隔。默认情况下，它以“\t”作为参数。</strong></p>
-<h3 id="STORE-存储数据"><a href="#STORE-存储数据" class="headerlink" title="STORE 存储数据"></a>STORE 存储数据</h3><p>语法：<code>STORE Relation_name INTO &#39;required_directory_path&#39; [USING function];</code></p>
-<h3 id="Group运算符"><a href="#Group运算符" class="headerlink" title="Group运算符"></a>Group运算符</h3><p>用于在一个或多个关系中对数据进行分组，它收集具有相同key的数据</p>
-<p>语法：<code>Group_data = GROUP Relation_name BY age;</code></p>
-<h3 id="Foreach运算符"><a href="#Foreach运算符" class="headerlink" title="Foreach运算符"></a>Foreach运算符</h3><p>用于基于列数据生成指定的数据转换</p>
-<p>语法：<code>Relation_name2 = FOREACH Relation_name1 GENRATE (required data);</code></p>
+          所有文章版权属个人所有，未经许可禁止转载
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/21/关于说明/说明/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -579,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/路由交换/test2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liszt">
@@ -598,7 +385,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/17/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2019/04/21/路由交换/test2/" itemprop="url">route</a></h1>
         
 
         <div class="post-meta">
@@ -610,8 +397,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T16:57:27+08:00">
-                2019-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T00:29:21+08:00">
+                2019-04-21
               </time>
             
 
@@ -620,6 +407,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/routing-switch/" itemprop="url" rel="index">
+                    <span itemprop="name">routing-switch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -650,17 +459,312 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/21/路由交换/test2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/路由交换/test1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liszt">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/shark.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liszt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/21/路由交换/test1/" itemprop="url">network</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T00:28:19+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/routing-switch/" itemprop="url" rel="index">
+                    <span itemprop="name">routing-switch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/21/路由交换/test1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Pig入门学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liszt">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/shark.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liszt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/17/Pig入门学习/" itemprop="url">pig入门学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T19:09:22+08:00">
+                2019-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          定义Apache Pig是MapReduce的一个抽象，是一个工具/平台，用于分析较大的数据集，并将它们表示为数据流。
+可以使用Pig在Hadoop中执行所有的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/17/Pig入门学习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -742,12 +846,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -801,7 +914,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
